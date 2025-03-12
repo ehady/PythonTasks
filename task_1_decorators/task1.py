@@ -5,7 +5,7 @@ import time
 logging.basicConfig(level=logging.INFO, filename="py_log.log", filemode="w")
 
 
-class track_entry_and_exit(ContextDecorator):
+class trackEntryAndExit(ContextDecorator):
     def __init__(self, name):
         self.name = name
         self.start_time = None
@@ -19,7 +19,7 @@ class track_entry_and_exit(ContextDecorator):
         logging.info('Exiting: %s | Execution time: %.4f seconds', self.name, elapsed_time)
 
 
-@track_entry_and_exit('sleep')
+@trackEntryAndExit('sleep')
 def activity():
     time.sleep(5)
 

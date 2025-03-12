@@ -3,7 +3,7 @@ import os
 from contextlib import suppress
 logging.basicConfig(level=logging.INFO, filename="py_log2.log",filemode="w")
 
-def suppress_exception(exception):
+def suppressException(exception):
     def decorator(func):
         def wrapper(*args, **kwargs):
             with suppress(exception):
@@ -15,7 +15,7 @@ def suppress_exception(exception):
         return  wrapper
     return decorator
 
-@suppress_exception(FileNotFoundError)
+@suppressException(FileNotFoundError)
 def remove_file(filename):
     os.remove(filename)
 
